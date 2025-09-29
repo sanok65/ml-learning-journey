@@ -40,4 +40,20 @@ def outer_product_numpy(vector1, vector2):
 - also known as MAE(Mean Absolute Error) and MSE(Mean Squared Error) respectively  
 - vectors must be the same size  
 - L2 is used for harsher punishments for training models as the value they are given that they are off by is exponentially higher  
-•
+  
+• Matrix Addition - adds 2 matrices element-wise  
+def matrix_addition_numpy(matrix1, matrix2):  
+    if matrix1.shape != matrix2.shape:  
+        raise ValueError("Matrices must have the same dimensions for addition")  
+  
+    result_matrix = matrix1 + matrix2  
+    return result_matrix 
+  
+• Matrix Multiplication - not element-wise, more complex  
+- A @ B or np.matmul(A,B)  
+def matrix_multiplication_numpy(matrix1, matrix2):  
+    if matrix1.shape[1] != matrix2.shape[0]:  
+        raise ValueError("Number of columns in the first matrix must be equal to the number of rows in the second matrix")  
+  
+    result_matrix = np.dot(matrix1, matrix2)  
+    return result_matrix  
